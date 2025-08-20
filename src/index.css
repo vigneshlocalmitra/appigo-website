@@ -98,32 +98,47 @@
   .container-custom {
     @apply container mx-auto px-4 md:px-6 lg:px-8;
   }
-  
+
   .heading-xl {
     @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight;
   }
-  
+
   .heading-lg {
     @apply text-3xl md:text-4xl font-bold;
   }
-  
+
   .heading-md {
     @apply text-2xl md:text-3xl font-bold;
   }
-  
+
   .btn-primary {
     @apply bg-primary text-white px-6 py-3 rounded-md font-medium hover:bg-opacity-90 transition-all;
   }
-  
+
   .btn-secondary {
     @apply bg-white text-primary border border-primary px-6 py-3 rounded-md font-medium hover:bg-primary/5 transition-all;
   }
-  
+
   .feature-card {
     @apply p-6 bg-white rounded-lg shadow-lg border border-gray-100 hover:shadow-xl transition-all;
   }
 
   .gradient-text {
     @apply bg-gradient-to-r from-primary to-indigo-600 bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-slide {
+    animation: slide 20s linear infinite;
   }
 }

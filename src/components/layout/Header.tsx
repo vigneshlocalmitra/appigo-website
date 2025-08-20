@@ -1,22 +1,56 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 
-export function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+interface NavLink {
+  name: string;
+  href: string;
+}
 
-  const navLinks = [
+interface HeaderProps {
+  logo?: string;
+  companyName?: string;
+  navLinks?: NavLink[];
+  ctaText?: string;
+  ctaAction?: () => void;
+  transparent?: boolean;
+  fixed?: boolean;
+}
+
+export function Header({
+  logo = "/logo.png",
+  companyName = "Appigo",
+  navLinks = [
     { name: "Home", href: "#hero" },
     { name: "Services", href: "#services" },
     { name: "Features", href: "#features" },
     { name: "Process", href: "#process" },
     { name: "Portfolio", href: "#portfolio" },
-    { name: "Testimonials", href: "#testimonials" },
     { name: "Contact", href: "#contact" },
-  ];
+  ],
+  ctaText = "Get Free Consultation",
+  ctaAction,
+  transparent = false,
+  fixed = true
+}: HeaderProps) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
+  // Dynamic scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 10;
+      setScrolled(isScrolled);
+    };
+
+    if (transparent) {
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }
+  }, [transparent]);
+
+  // Handle navigation clicks
   const handleLinkClick = (href: string) => {
     if (href.startsWith('#')) {
       const element = document.querySelector(href);
@@ -27,80 +61,130 @@ export function Header() {
     setMobileMenuOpen(false);
   };
 
+  // Handle CTA click
+  const handleCtaClick = () => {
+    if (ctaAction) {
+      ctaAction();
+    } else {
+      // Default action - scroll to contact
+      const contactElement = document.querySelector('#contact');
+      if (contactElement) {
+        contactElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
+  // Dynamic header classes
+  const headerClasses = [
+    fixed ? 'sticky top-0' : 'relative',
+    'z-50 transition-all duration-300',
+    transparent && !scrolled
+      ? 'bg-transparent'
+      : 'bg-white border-b shadow-sm'
+  ].join(' ');
+
+  const logoClasses = [
+    'transition-all duration-300',
+    scrolled && transparent ? 'h-8' : 'h-10',
+    'w-auto object-contain'
+  ].join(' ');
+
+  const textClasses = [
+    'font-medium transition-colors duration-200',
+    transparent && !scrolled
+      ? 'text-white hover:text-gray-200'
+      : 'text-gray-700 hover:text-blue-600'
+  ].join(' ');
+
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
-      <div className="container-custom py-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-3">
-              <img 
-                src="/logo.png" 
-                alt="Appigo Logo" 
-                className="h-10 w-auto object-contain"
-              />
-              <span className="text-xl font-bold text-gray-900">Appigo</span>
-            </Link>
-          </div>
-          
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleLinkClick(link.href);
-                }}
-                className="text-sm font-medium text-gray-700 hover:text-primary transition-colors cursor-pointer"
-              >
-                {link.name}
-              </a>
-            ))}
-            <Button size="sm" className="bg-primary hover:bg-primary/90">
-              Get Free Consultation
-            </Button>
-          </nav>
-          
-          {/* Mobile Menu Button */}
-          <button
-            type="button"
-            className="md:hidden p-2 rounded-md text-gray-700"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? (
-              <X className="h-6 w-6" aria-hidden="true" />
-            ) : (
-              <Menu className="h-6 w-6" aria-hidden="true" />
+    <header className={headerClasses}>
+      <div className="w-full">
+        <div className="flex items-center justify-between h-16 px-6">
+          {/* Logo */}
+          <Link to="/" className="flex items-center space-x-2">
+            <img
+              src={logo}
+              alt={`${companyName} Logo`}
+              className={logoClasses}
+            />
+            {companyName && !logo.includes('logo') && (
+              <span className={`text-xl font-bold ${textClasses}`}>
+                {companyName}
+              </span>
             )}
-          </button>
+          </Link>
+
+          {/* Right Side Content - Navigation + CTA + Mobile Menu */}
+          <div className="flex items-center space-x-8">
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center space-x-8">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLinkClick(link.href);
+                  }}
+                  className={textClasses}
+                >
+                  {link.name}
+                </a>
+              ))}
+            </nav>
+
+            {/* CTA Button */}
+            <Button
+              onClick={handleCtaClick}
+              variant={transparent && !scrolled ? "outline" : "default"}
+            >
+              {ctaText}
+            </Button>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden p-2 rounded-md"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? (
+                <X size={24} className={transparent && !scrolled ? 'text-white' : 'text-gray-700'} />
+            ) : (
+                <Menu size={24} className={transparent && !scrolled ? 'text-white' : 'text-gray-700'} />
+              )}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
-        <div
-          className={cn(
-            "md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-200 shadow-lg transition-all duration-300 ease-in-out",
-            mobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
-          )}
-        >
-          <div className="flex flex-col space-y-4 p-4">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleLinkClick(link.href);
-                }}
-                className="text-base font-medium text-gray-700 hover:text-primary py-2 cursor-pointer"
+        {mobileMenuOpen && (
+          <div className="md:hidden py-4 border-t px-6">
+            <div className="flex flex-col space-y-3">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLinkClick(link.href);
+                  }}
+                  className={textClasses}
+                >
+                  {link.name}
+                </a>
+              ))}
+              <Button
+                onClick={handleCtaClick}
+                className="mt-4 w-full"
               >
-                {link.name}
-              </a>
-            ))}
-            <Button className="mt-2 w-full">Get Free Consultation</Button>
+                {ctaText}
+              </Button>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </header>
   );
 }
+
+// Default export for backward compatibility
+export default Header;

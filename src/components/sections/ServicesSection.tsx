@@ -31,7 +31,16 @@ const ServiceCard = ({ icon, title, description, features }: ServiceProps) => {
         </ul>
       </CardContent>
       <CardFooter>
-        <Button className="w-full">GET FREE CONSULTATION</Button>
+        <Button 
+          onClick={() => {
+            const message = encodeURIComponent(`Hi! I'm interested in your ${title} services. Can you tell me more about pricing and process?`);
+            const whatsappUrl = `https://wa.me/9113565847?text=${message}`;
+            window.open(whatsappUrl, '_blank');
+          }}
+          className="w-full"
+        >
+          GET FREE CONSULTATION
+        </Button>
       </CardFooter>
     </Card>
   );
@@ -113,7 +122,7 @@ export function ServicesSection() {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="heading-lg mb-4">Our Digital Solutions</h2>
           <p className="text-gray-600">
-            We offer comprehensive digital services to help your business grow online. 
+            We offer comprehensive digital services to help your business grow online.
             From websites to AI automation, we've got you covered.
           </p>
         </div>

@@ -13,7 +13,7 @@ interface Project {
 
 export function PortfolioSection() {
   const [activeFilter, setActiveFilter] = useState<string>("all");
-  
+
   const projects: Project[] = [
     {
       id: 1,
@@ -74,8 +74,8 @@ export function PortfolioSection() {
     { id: "healthcare", name: "Healthcare" }
   ];
 
-  const filteredProjects = activeFilter === 'all' 
-    ? projects 
+  const filteredProjects = activeFilter === 'all'
+    ? projects
     : projects.filter(project => project.category === activeFilter);
 
   return (
@@ -120,8 +120,8 @@ export function PortfolioSection() {
                 <p className="text-gray-600 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, index) => (
-                    <span 
-                      key={index} 
+                    <span
+                      key={index}
                       className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full"
                     >
                       {tag}
@@ -135,7 +135,16 @@ export function PortfolioSection() {
 
         {/* View More Button */}
         <div className="text-center mt-12">
-          <Button variant="outline">View All Projects</Button>
+          <Button 
+            onClick={() => {
+              const message = encodeURIComponent("Hi! I'd like to see more of your portfolio projects. Can you show me more examples?");
+              const whatsappUrl = `https://wa.me/9113565847?text=${message}`;
+              window.open(whatsappUrl, '_blank');
+            }}
+            variant="outline"
+          >
+            View All Projects
+          </Button>
         </div>
       </div>
     </section>

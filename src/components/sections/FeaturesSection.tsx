@@ -40,7 +40,7 @@ export function FeaturesSection() {
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="heading-lg mb-4">Why Choose Appigo?</h2>
           <p className="text-gray-600">
-            We combine technical expertise with business understanding to deliver digital solutions 
+            We combine technical expertise with business understanding to deliver digital solutions
             that drive real results for your business.
           </p>
         </div>

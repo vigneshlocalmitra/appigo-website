@@ -62,19 +62,19 @@ export function ProcessSection() {
         <div className="relative">
           {/* Progress Line */}
           <div className="hidden md:block absolute left-1/2 top-10 bottom-10 w-0.5 bg-gray-200 -translate-x-1/2 z-0"></div>
-          
+
           {/* Steps */}
           <div className="space-y-16 md:space-y-0 relative z-10">
             {steps.map((step, index) => (
               <div key={step.id} className="md:flex items-center">
-                <div 
+                <div
                   className={cn(
-                    "md:w-1/2", 
+                    "md:w-1/2",
                     index % 2 === 0 ? "md:pr-16 text-right" : "md:pl-16 md:order-1"
                   )}
                 >
                   <div className={cn(
-                    "inline-block mb-4 p-4 rounded-full", 
+                    "inline-block mb-4 p-4 rounded-full",
                     step.color
                   )}>
                     {step.icon}
@@ -82,7 +82,7 @@ export function ProcessSection() {
                   <h3 className="text-xl font-bold mb-2">{step.title}</h3>
                   <p className="text-gray-600">{step.description}</p>
                 </div>
-                
+
                 <div className="hidden md:flex justify-center items-center">
                   <div className={cn(
                     "h-12 w-12 rounded-full border-4 border-white bg-primary flex items-center justify-center text-white font-bold shadow-lg"
@@ -90,7 +90,7 @@ export function ProcessSection() {
                     {step.id}
                   </div>
                 </div>
-                
+
                 {index % 2 !== 0 && <div className="md:w-1/2"></div>}
               </div>
             ))}

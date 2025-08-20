@@ -11,10 +11,11 @@ export function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 rounded-md bg-primary flex items-center justify-center">
-                <span className="text-white font-bold text-lg">A</span>
-              </div>
-              <span className="text-xl font-bold">Appigo</span>
+              <img
+                src="/logo.png"
+                alt="Appigo Logo"
+                className="h-10 w-auto object-contain"
+              />
             </Link>
             <p className="text-gray-400 text-sm">
               Appigo provides mobile app and web development solutions for startups and businesses.
@@ -35,7 +36,7 @@ export function Footer() {
               </a>
             </div>
           </div>
-          
+
           {/* Services */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Our Services</h3>
@@ -67,7 +68,7 @@ export function Footer() {
               </li>
             </ul>
           </div>
-          
+
           {/* Quick Links */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Quick Links</h3>
@@ -99,7 +100,7 @@ export function Footer() {
               </li>
             </ul>
           </div>
-          
+
           {/* Contact */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Contact Us</h3>
@@ -107,21 +108,21 @@ export function Footer() {
               <li className="flex items-start space-x-3">
                 <MapPin size={18} className="text-primary mt-1 shrink-0" />
                 <span className="text-gray-400 text-sm">
-                  123 Business Park, Tech Street, City, Country
+                 JP Tulips, Banglore Rural Bangalore, Karnataka, India
                 </span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone size={18} className="text-primary shrink-0" />
-                <span className="text-gray-400 text-sm">+1 234 567 8901</span>
+                <span className="text-gray-400 text-sm">+91 9113565847</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail size={18} className="text-primary shrink-0" />
-                <span className="text-gray-400 text-sm">contact@appigo.com</span>
+                <span className="text-gray-400 text-sm">appigo.in@gmail.com</span>
               </li>
             </ul>
           </div>
         </div>
-        
+
         <div className="border-t border-gray-800 mt-12 pt-6 text-center text-gray-400 text-sm">
           <p>© {currentYear} Appigo. All rights reserved.</p>
         </div>

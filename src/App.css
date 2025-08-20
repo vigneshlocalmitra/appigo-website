@@ -98,7 +98,7 @@ body {
   .heading-xl {
     @apply text-3xl;
   }
-  
+
   .heading-lg {
     @apply text-2xl;
   }

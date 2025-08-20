@@ -94,7 +94,7 @@ export function TestimonialsSection() {
               </div>
             </CardContent>
           </Card>
-          
+
           <div className="flex justify-center mt-8 gap-4">
             <Button
               variant="outline"
