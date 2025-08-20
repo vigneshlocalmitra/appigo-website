@@ -7,7 +7,7 @@ echo "======================================"
 HOST="145.223.20.147"
 PORT="22"
 USER="appig7958"
-REMOTE_PATH="/home/appig7958/public_html"
+REMOTE_PATH="/home/appigo.in/public_html"
 SSH_KEY="~/.ssh/appigo_deploy"
 
 # Check if we have the production build

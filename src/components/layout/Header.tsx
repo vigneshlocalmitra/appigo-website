@@ -32,10 +32,12 @@ export function Header() {
       <div className="container-custom py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 rounded-md bg-primary flex items-center justify-center">
-                <span className="text-white font-bold text-lg">A</span>
-              </div>
+            <Link to="/" className="flex items-center space-x-3">
+              <img 
+                src="/logo.png" 
+                alt="Appigo Logo" 
+                className="h-10 w-auto object-contain"
+              />
               <span className="text-xl font-bold text-gray-900">Appigo</span>
             </Link>
           </div>
