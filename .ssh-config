@@ -1,0 +1,9 @@
+Host appigo-server
+    HostName 145.223.20.147
+    Port 22
+    User appig7958
+    IdentityFile ~/.ssh/appigo_deploy
+    IdentitiesOnly yes
+    ServerAliveInterval 60
+    ServerAliveCountMax 3
+    ConnectTimeout 10
