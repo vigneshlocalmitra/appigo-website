@@ -77,33 +77,71 @@ Sent from Appigo Website Contact Form`;
         </div>
 
         <div className="max-w-4xl mx-auto">
-          {/* FAQ Section for SEO */}
+          {/* FAQ Section for SEO - WEBSITE DEVELOPMENT FOCUS */}
           <div className="mb-12">
-            <h3 className="text-2xl font-bold text-center mb-8 text-gray-900">Frequently Asked Questions</h3>
+            <h3 className="text-3xl font-bold text-center mb-8 text-gray-900">
+              Frequently Asked Questions - Website Development Bangalore
+            </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h4 className="font-semibold text-lg mb-3 text-gray-900">What is an app and how can you help me build one?</h4>
-                <p className="text-gray-600">An app is a software application designed for mobile devices or web browsers. We specialize in building custom apps for businesses, from simple mobile apps to complex enterprise solutions. Our team creates apps that drive engagement and business growth.</p>
+              {/* Website Development Focus */}
+              <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                <h4 className="font-semibold text-lg mb-3 text-gray-900">What is website development and why do I need it?</h4>
+                <p className="text-gray-600">Website development is the process of creating websites for the internet. A website is your digital storefront that works 24/7 to showcase your business. We create professional websites that convert visitors into customers, with features like e-commerce, booking systems, and mobile-responsive design.</p>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h4 className="font-semibold text-lg mb-3 text-gray-900">What is a website and why do I need one?</h4>
-                <p className="text-gray-600">A website is your digital storefront that works 24/7 to showcase your business. We create professional websites that convert visitors into customers, with features like e-commerce, booking systems, and mobile-responsive design.</p>
+              
+              <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                <h4 className="font-semibold text-lg mb-3 text-gray-900">How much does website development cost in Bangalore?</h4>
+                <p className="text-gray-600">Website development costs in Bangalore typically range from ₹50,000 to ₹5,00,000 depending on complexity. We offer competitive pricing with free consultation to discuss your specific requirements for website development in Bangalore.</p>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h4 className="font-semibold text-lg mb-3 text-gray-900">How much does app development cost in Bangalore?</h4>
-                <p className="text-gray-600">App development costs in Bangalore typically range from ₹2-15 lakhs depending on complexity. We offer competitive pricing with free consultation to discuss your specific requirements.</p>
+              
+              <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                <h4 className="font-semibold text-lg mb-3 text-gray-900">How long does it take to develop a website in Bangalore?</h4>
+                <p className="text-gray-600">Our website development projects in Bangalore are typically completed in 2-6 weeks depending on complexity. We use modern development practices to accelerate delivery while maintaining quality.</p>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h4 className="font-semibold text-lg mb-3 text-gray-900">How long does it take to develop a food delivery app?</h4>
-                <p className="text-gray-600">Our food delivery apps are typically completed in 4-8 weeks. We use modern development practices and pre-built components to accelerate delivery while maintaining quality.</p>
+              
+              <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                <h4 className="font-semibold text-lg mb-3 text-gray-900">Do you provide e-commerce website development in Bangalore?</h4>
+                <p className="text-gray-600">Yes! We specialize in e-commerce website development in Bangalore with features like payment gateways, inventory management, order tracking, and mobile-responsive design.</p>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h4 className="font-semibold text-lg mb-3 text-gray-900">Do you provide e-commerce website development?</h4>
-                <p className="text-gray-600">Yes! We specialize in e-commerce website development with features like payment gateways, inventory management, order tracking, and mobile-responsive design.</p>
+              
+              <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                <h4 className="font-semibold text-lg mb-3 text-gray-900">What technologies do you use for website development in Bangalore?</h4>
+                <p className="text-gray-600">We use React, Next.js, WordPress, and modern web technologies for website development in Bangalore. Our tech stack ensures fast performance, SEO optimization, and easy maintenance.</p>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h4 className="font-semibold text-lg mb-3 text-gray-900">What technologies do you use for app development?</h4>
-                <p className="text-gray-600">We use React Native, Flutter, Swift, Kotlin, and modern web technologies. Our tech stack ensures cross-platform compatibility, fast performance, and easy maintenance.</p>
+              
+              <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                <h4 className="font-semibold text-lg mb-3 text-gray-900">Are you the best website development company in Bangalore?</h4>
+                <p className="text-gray-600">Yes! Appigo is recognized as the #1 website development company in Bangalore, Karnataka. We have a proven track record of delivering high-quality websites that drive business growth and customer engagement.</p>
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                <h4 className="font-semibold text-lg mb-3 text-gray-900">Do you provide website development services in all areas of Bangalore?</h4>
+                <p className="text-gray-600">Absolutely! We serve all areas of Bangalore including Whitefield, Marathahalli, Electronic City, Koramangala, Indiranagar, Jayanagar, BTM Layout, HSR Layout, Bellandur, Sarjapur, and more.</p>
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                <h4 className="font-semibold text-lg mb-3 text-gray-900">Can you help my website rank #1 on Google in Bangalore?</h4>
+                <p className="text-gray-600">Yes! Our websites consistently rank #1 on Google for website development searches in Bangalore. We implement proven SEO strategies, local optimization, and performance techniques to ensure top rankings.</p>
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                <h4 className="font-semibold text-lg mb-3 text-gray-900">What is the difference between website development and web design?</h4>
+                <p className="text-gray-600">Website development involves building the technical functionality and backend systems, while web design focuses on the visual appearance and user experience. We provide both services to create complete, professional websites.</p>
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                <h4 className="font-semibold text-lg mb-3 text-gray-900">Do you provide website maintenance services in Bangalore?</h4>
+                <p className="text-gray-600">Yes! We offer comprehensive website maintenance services including regular updates, security patches, performance optimization, and content updates to keep your website running smoothly.</p>
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                <h4 className="font-semibold text-lg mb-3 text-gray-900">Can you create a website for my restaurant in Bangalore?</h4>
+                <p className="text-gray-600">Absolutely! We specialize in creating websites for restaurants, cafes, and food businesses in Bangalore. Our restaurant websites include online ordering, menu management, table reservations, and delivery integration.</p>
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                <h4 className="font-semibold text-lg mb-3 text-gray-900">What makes Appigo different from other website development companies in Bangalore?</h4>
+                <p className="text-gray-600">We're different because we're Bangalore-based, understand local business needs, guarantee Google #1 rankings, provide fast delivery (2-6 weeks), and offer ongoing support. Plus, we have a proven track record of 100+ successful projects.</p>
               </div>
             </div>
           </div>
